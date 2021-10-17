@@ -24,7 +24,7 @@ Miners are those people who add blocks to the chain after doing some computation
 
 ## How mining works.
 
-Consider a situation where, after a transaction was completed, a random number was added to the ledger. The sha256 hash of the random number is given as `hash = '00bebc5be79d19e1b8b3f250dc39aebfa9a054baf5f8d61380438d92394c476a'`. 
+Consider a situation where, after a transaction was completed, a random number was added to the ledger. The sha256 hash of the random number is given as `hash ='00bebc5be79d19e1b8b3f250dc39aebfa9a054baf5f8d61380438d92394c476a'`. 
 
 Now, the task of the miners is to find a message such that the first-two elements of the hash of the message corresponds to the first-two elements of the original hash. The first miner to do so will get to add the block and recieve some benefits for utilizing his time/resorces. 
 
