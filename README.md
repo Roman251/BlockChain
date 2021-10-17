@@ -79,7 +79,7 @@ Consider 3 users SAM, ALICE and JOSHEPH
 2. What if Sam creates a ledger and pays Alice $100 but later backs down?<br>
    ***The verification part uses Sam's public key to verify his signature he signed using his private key. This ensures that it was Sam who made the request as digital signatures cannot be forged unless you have the private key.***  
 
-3. What if Sam tries to add several copies of the previous lines?
+3. What if Sam tries to add several copies of the previous lines?<br>
    ***Each transaction can have a unique message so that the signature generated for each transaction even for the same user is different.***
 
 3. What if Sam tries to create a ledger stating that Josheph sent Alice $100?<br>
