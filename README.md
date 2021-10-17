@@ -16,7 +16,7 @@ Each block contains the ledger(document of transaction) and the hash of the prev
 
 1. **Customers**
 
-Customers are the people making the transaction. Each customer has the ability to send money to other customers in the chain. The customer sending the amount will create a ledger request and the one recieving will verify the request making the ledger authentic.  
+Customers are the people making the transaction. Each customer has the ability to send money to other customers in the chain. The customer sending the amount will create a ledger request and the one recieving will verify the request making the ledger authentic. Each customer is assigned a private key (secret-key) that he/she uses to create a digital signature. Only the user has access to his/her private key. The signature is verified using the user's public key. The public key is shared among all the other users.
 
 2. **Miners**
 
@@ -58,10 +58,6 @@ print("And the hash is : ", h.hexdigest())
 
 Imagine if the condition was such that the **first-ten** elements had to be same or the **first-thirty**.
 The computation would be extremely high. This is what the miners do. 
-
-2. **User**
-
-Each customer is assigned a private key (secret-key) that he/she uses to create a digital signature. Only the user has access to his/her private key. The signature is verified using the user's public key. The public key is shared among all the other users.
 
 ## Understanding the work flow
 - Everytime a new user object is created, a file is created with the user's private and public key.
