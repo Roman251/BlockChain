@@ -1,20 +1,10 @@
-
-'''
-Track time
-'''
 import os
 import time
 from datetime import datetime
 
-'''
-Generate Hash
-'''
 import random
 from Crypto.Hash import SHA256
 
-'''
-Generate digital signatures
-'''
 from Crypto.PublicKey import RSA
 from Crypto.Signature import pkcs1_15
 
@@ -38,8 +28,7 @@ def arbitrary() -> int:
     return random_number
 
 
-class Block:
-    
+class Block:   
   index = 0
   blocks = [] # will store the chain of blocks
     
@@ -72,7 +61,6 @@ class Block:
 
 
 class Miners:
-  
   miners_list = [] # will contain objects
   
   def __init__(self, miner_name:str):
@@ -98,7 +86,6 @@ class Miners:
 
 
 class Ledger:
-
   index = 0
     
   def __init__(self, sender:str, recipient:str, amount:float, sign):
@@ -120,8 +107,7 @@ class User:
     """ 
     class variable : [users] -> contains name of every user
     class variable : [all_public] - > contains public key of each user so that it can be shared
-    """
-    
+    """ 
     users      = [] 
     all_public = dict()
         
