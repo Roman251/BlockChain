@@ -127,6 +127,3 @@ print(alice.data[1].data, sam.data[1].data)
 
 ## Remarks
 All of the explanation and code is based on my understanding of the system. I may be wrong in my understanding of it. If you find any mistakes, do reach out to me. 
-
-## Project By
-Roman Regmi
