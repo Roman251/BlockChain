@@ -1,4 +1,4 @@
-from block_chain import *
+from chain import *
 
 if __name__=='__main__':
     # generate miners
