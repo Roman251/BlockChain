@@ -74,10 +74,8 @@ class Miners:
 class Ledger:
   index = 0  
   def __init__(self, sender:str, recipient:str, amount:float, sign):
-
       Ledger.index += 1
       self.position = Ledger.index
-      
       self.amount, self.sign = amount, sign
       self.sender, self.recipient = sender, recipient
       
@@ -94,7 +92,6 @@ class User:
         
     def __init__(self, cust_name, password):      
       self.data = Block.blocks
-      
       self.cust_name = cust_name
       self.password  = password
 
@@ -135,7 +132,6 @@ class User:
     
     def verify_request(self, obj_recipient:object, sender, message:bytes, sign:bytes, amount:float) -> bool:
       print("The amount sent is : {} and the sender is : {}".format(amount, sender))
-
       password = input("Enter your password : ")
       if password == obj_recipient.password:
       
