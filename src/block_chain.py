@@ -110,14 +110,12 @@ class User:
 
       start_time = time.time()
 
-      print("generating private key")
       f = open(f'../keys/{self.cust_name}/private_keyfile.pem', 'wb')
       f.write(self.private_key) # private key generation and storation
       f.close()
 
-      print("generating public key")
       f = open(f'../keys/{self.cust_name}/public_keyfile.pem', 'wb')
-      f.write(self.public_key) # private key generation and storation
+      f.write(self.public_key) # public key generation and storation
       f.close()
       
       print("--- %s seconds ---" % (time.time() - start_time))
@@ -127,16 +125,13 @@ class User:
       User.all_public[cust_name]=self.public_key
 
     def add_ledger_request(self, obj_recipient:object, amount:float, key, message:bytes=b'To be signed') -> None: 
-      if RSA.import_key(self.private_key) == key:
-        
-        print("generating signature")
+      if RSA.import_key(self.private_key) == key:     
         sign = self.generate_signature(message, key)
-        print("signature generation successful")
         
         if self.verify_request(obj_recipient, self.cust_name, message, sign, amount):
           Ledger(self.cust_name, obj_recipient.cust_name, amount, sign)
         else:
-          print("The ledger was not created")
+          print("Verification Error")
     
     def verify_request(self, obj_recipient:object, sender, message:bytes, sign:bytes, amount:float) -> bool:
       print("The amount sent is : {} and the sender is : {}".format(amount, sender))
@@ -156,7 +151,7 @@ class User:
           return False
       
       else:
-        print("password did not match")
+        print("Wrong Password")
           
     def generate_signature(self, message, key):
       h = SHA256.new(message)
